@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="cn.edu.tjut.po.Subject" table="tb_subject" catalog="db_onlinetestsystem">
+        <id name="subjectId" type="java.lang.Integer">
+            <column name="subjectID" />
+            <generator class="identity" />
+        </id>
+        <property name="subjectType" type="java.lang.String" not-null="true">
+        	<column name="subjectType" />
+        </property>
+        <property name="subjectTitle" type="java.lang.String">
+            <column name="subjectTitle" />
+        </property>
+        <property name="subjectOptionA" type="java.lang.String">
+            <column name="subjectOptionA" length="50" />
+        </property>
+        <property name="subjectOptionB" type="java.lang.String">
+            <column name="subjectOptionB" length="50" />
+        </property>
+        <property name="subjectOptionC" type="java.lang.String">
+            <column name="subjectOptionC" length="50" />
+        </property>
+        <property name="subjectOptionD" type="java.lang.String">
+            <column name="subjectOptionD" length="50" />
+        </property>
+        <property name="subjectAnswer" type="java.lang.String">
+            <column name="subjectAnswer" length="1" />
+        </property>
+        <property name="subjectParse" type="java.lang.String">
+            <column name="subjectParse" length="65535" />
+        </property>
+        <property name="subjectScore" type="java.lang.Integer">
+        	<column name="subjectScore"></column>
+        </property>
+        <!-- 配置多对多关联关系 -->
+      	<set name="papers" table="tb_subpap" inverse="true">
+      		<key column="subId"></key>
+      		<many-to-many column="papId" class="cn.edu.tjut.po.Paper"></many-to-many>
+      	</set>
+    </class>
+</hibernate-mapping>

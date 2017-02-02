@@ -1,0 +1,47 @@
+*{margin:0;padding:0;font-family:Verdana, Geneva, sans-serif;font-size:13px;line-height:28px;}
+
+#wrap{border:3px solid #99C;border-top:10px solid #99C;border-radius:6px;height:455px;position:relative;}
+
+#cap{text-indent:0;width:100px;text-align:center;line-height:30px;margin:0 20px;border-radius:8px 8px 0 0;border:1px solid black;border-bottom:none;border-top:2px solid #969;background-color:white;}
+#capwrap{border-bottom:2px solid #969;height:30px;background-color:#99C;}
+#content{border-top:none;}
+
+#top{margin:15px 0;text-indent:28px;}
+.right{float:right;}
+.abs{position:absolute;bottom:0;right:0;}
+#delBatch{margin:0 30px;width:70px;height:35px;}
+
+#queryB{width:60px;}
+input[type="text"]{height:20px;}
+input[type="submit"]{width:60px;height:30px;}
+
+table{list-style:none;width:100%;}
+td{text-align:center;margin:0;border:none;}
+td.firTD{width:20px;}
+td.subType{width:100px;}
+td.subDisc{width:620px;}
+td.score{width:50px;}
+tr.head{background-color:#C33;color:white;}
+td.subUp{text-align:right;padding-right:5px;}
+td.subDel{text-align:left;padding-left:5px;}
+td a:active{text-decoration:none;color:blue;}
+td a:visited{text-decoration:none;color:blue;}
+td a:link{text-decoration:none;color:blue;}
+td a:hover{text-decoration:underline;color:red;}
+
+#go{border:1px solid #999;color:#C33;padding:3px;}
+#pageNumber{width:20px;height:20px;}
+
+#leftBar{float:left;}
+#rightBar{float:right;}
+.star{color:red;}
+label span{color:red;}
+label{margin-left:15px;}
+#paperName,#paperDescription{margin:0 15px;}
+#paperDescription{resize:none;width:300px;height:250px;}
+#paperAuthor{margin:10px 0;width:80px;height:25px;}
+#paperName{width:300px;}
+.button{width:50px;height:30px;}
+#buttonWrap{width:200px;margin:0 auto;}
+
+input[type="button"],input[type="submit"],button,#go{cursor:pointer;}

@@ -1,0 +1,24 @@
+*{margin:0;padding:0;font-family:Verdana, Geneva, sans-serif;font-size:13px;line-height:28px;}
+
+#wrap{border:3px solid #99C;border-top:10px solid #99C;border-radius:6px;height:455px;}
+
+#cap{text-indent:0;width:100px;text-align:center;line-height:30px;margin:0 20px;border-radius:8px 8px 0 0;border:1px solid black;border-bottom:none;border-top:2px solid #969;background-color:white;}
+#capwrap{border-bottom:2px solid #969;height:30px;background-color:#99C;}
+#content{border-top:none;width:380px;margin:0 auto;position:relative;}
+
+label span{color:red;}
+
+#subjectTitle{width:300px;height:60px;margin-left:50px;}
+
+input{margin-top:10px;}
+input[type="text"]{width:300px;height:25px;}
+#subjectOptionD{margin-bottom:10px;}
+
+#subjectParse{width:300px;height:50px;margin-left:50px;}
+
+textarea{resize:none;}
+.button{width:50px;height:30px;cursor:pointer;}
+#wrap2{width:150px;margin:0 auto;}
+
+.color{background-color:#F60;color:white;}
+#score{width:20px;height:15px;}

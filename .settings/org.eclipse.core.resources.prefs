@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//WebRoot/WEB-INF=UTF-8
+encoding//WebRoot/jsp/student/exam.jsp=UTF-8
+encoding//WebRoot/jsp/student/result.jsp=UTF-8
+encoding//WebRoot/jsp/student/resultInfo.jsp=UTF-8
+encoding//WebRoot/jsp/student/studentLogin.jsp=UTF-8
+encoding//WebRoot/jsp/teacher/paper/paperCheck.jsp=UTF-8
+encoding//WebRoot/jsp/teacher/paper/paperQuery.jsp=UTF-8
+encoding//WebRoot/jsp/teacher/result/resultInfo.jsp=UTF-8
+encoding//WebRoot/jsp/teacher/student/studentAllInfo.jsp=UTF-8
+encoding//WebRoot/jsp/teacher/student/studentBaseInfo.jsp=UTF-8
+encoding//WebRoot/login.jsp=UTF-8
+encoding//WebRoot/resources/js/student/studentLogin.js=UTF-8

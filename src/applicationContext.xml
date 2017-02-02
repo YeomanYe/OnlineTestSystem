@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-3.1.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+         http://www.springframework.org/schema/tx
+         http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+         http://www.springframework.org/schema/task
+		 http://www.springframework.org/schema/task/spring-task-3.1.xsd"
+		>
+
+	<!-- 导入外部jdbc配置文件 -->
+	<context:property-placeholder location="classpath:jdbc.properties" />
+
+	<bean name="page" class="cn.edu.tjut.model.Page" scope="prototype"></bean>
+
+
+	<!-- 配置Action类 -->
+	<bean  id="studentOperateAction" class="cn.edu.tjut.action.StudentOperateAction" scope="prototype">
+		<property name="studentService" ref="studentServiceImp"></property>
+		<property name="paperService" ref="paperServiceImp"></property>
+		<property name="resultService" ref="resultServiceImp"></property>
+		<property name="subjectList" ><list></list></property>
+	</bean>
+	
+	<bean id="registerAction" class="cn.edu.tjut.action.RegisterAction" scope="prototype">
+		<property name="studentService" ref="studentServiceImp"></property>
+	</bean>
+	
+	<bean id="captchaAction" class="cn.edu.tjut.action.CaptchaAction" scope="prototype"></bean>
+	
+	<bean id="querySubjectAction" class="cn.edu.tjut.action.QuerySubjectAction"
+		scope="prototype">
+		<property name="subjectService" ref="subjectServiceImp"></property>
+		<property name="page" ref="page"></property>
+	</bean>
+
+	<bean id="loginAction" class="cn.edu.tjut.action.LoginAction"
+		scope="prototype" autowire="default">
+		<property name="studentService" ref="studentServiceImp"></property>
+		<property name="paperService" ref="paperServiceImp"></property>
+		<property name="subjectList">
+		<list>
+		</list>
+		</property>
+		<property name="teacherService" ref="teacherServiceImp"></property>
+	</bean>
+
+	<bean id="saveSubjectAction" class="cn.edu.tjut.action.SaveSubjectAction"
+		scope="prototype">
+		<property name="subject" ref="subject"></property>
+		<property name="subjectService" ref="subjectServiceImp"></property>
+	</bean>
+
+	<bean id="delSubjectAction" class="cn.edu.tjut.action.DelSubjectAction"
+		scope="prototype">
+		<property name="subject" ref="subject"></property>
+		<property name="subjectService" ref="subjectServiceImp"></property>
+	</bean>
+
+	<bean id="savePaperAction" class="cn.edu.tjut.action.SavePaperAction"
+		scope="prototype">
+		<property name="batchSubjects"><list></list></property>
+		<property name="page" ref="page"></property>
+		<property name="paper" ref="paper"></property>
+		<property name="paperService" ref="paperServiceImp"></property>
+		<property name="subjectService" ref="subjectServiceImp"></property>
+	</bean>
+
+	<bean id="queryStudentAction" class="cn.edu.tjut.action.QueryStudentAction"
+		scope="prototype">
+		<property name="studentService" ref="studentServiceImp"></property>
+	</bean>
+
+	<bean id="queryPaperAction" class="cn.edu.tjut.action.QueryPaperAction"
+		scope="prototype">
+		<property name="paperService" ref="paperServiceImp"></property>
+		<property name="page" ref="page"></property>
+	</bean>
+
+	<bean id="delPaperAction" class="cn.edu.tjut.action.DelPaperAction"
+		scope="prototype">
+		<property name="paperService" ref="paperServiceImp"></property>
+	</bean>
+	
+	<bean id="resultAction" class="cn.edu.tjut.action.ResultAction"
+		scope="prototype">
+		<property name="studentService" ref="studentServiceImp"></property>
+		<property name="resultService" ref="resultServiceImp"></property>
+	</bean>
+	
+	<bean id="examAction" class="cn.edu.tjut.action.ExamAction" 
+		scope="prototype">
+		<property name="subjectService" ref="subjectServiceImp"></property>
+		<property name="studentAnswer">
+		<list>
+		</list>
+		</property>
+		<property name="resultService" ref="resultServiceImp"></property>
+		<property name="result" ref="result"></property>
+		<property name="studentService" ref="studentServiceImp"></property>
+	</bean>
+	
+
+	<!-- 配置业务层类 -->
+	<bean id="subjectServiceImp" class="cn.edu.tjut.service.SubjectServiceImp">
+		<property name="subjectDao" ref="subjectDaoImp"></property>
+		<property name="pageDao" ref="pageDaoImp"></property>
+	</bean>
+
+	<bean id="paperServiceImp" class="cn.edu.tjut.service.PaperServiceImp">
+		<property name="paperDao" ref="paperDaoImp"></property>
+		<property name="pageDao" ref="pageDaoImp"></property>
+	</bean>
+
+	<bean id="studentServiceImp" class="cn.edu.tjut.service.StudentServiceImp">
+		<property name="studentDao" ref="studentDaoImp"></property>
+		<property name="student" ref="student"></property>
+		<property name="commonDao" ref="commonDaoImp"></property>
+	</bean>
+
+	<bean id="resultServiceImp" class="cn.edu.tjut.service.ResultServiceImp">
+		<property name="resultDao" ref="resultDaoImp"></property>
+	</bean>
+	
+	<bean id="teacherServiceImp" class="cn.edu.tjut.service.TeacherServiceImp">
+		<property name="teacherDao"	ref="teacherDaoImp"></property>
+		<property name="commonDao" ref="commonDaoImp"></property>	
+	</bean>
+	
+	<!-- 配置DAO类 -->
+	<bean id="commonDaoImp" class="cn.edu.tjut.dao.CommonDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="subjectDaoImp" class="cn.edu.tjut.dao.SubjectDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="pageDaoImp" class="cn.edu.tjut.dao.PageDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="paperDaoImp" class="cn.edu.tjut.dao.PaperDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="studentDaoImp" class="cn.edu.tjut.dao.StudentDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="resultDaoImp" class="cn.edu.tjut.dao.ResultDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="teacherDaoImp" class="cn.edu.tjut.dao.TeacherDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!-- 配置持久化类 -->
+	<bean id="subject" class="cn.edu.tjut.po.Subject" scope="prototype">
+		<property name="papers"><set></set></property>
+	</bean>
+	
+	<bean id="student" class="cn.edu.tjut.po.Student" scope="prototype"></bean>
+
+	<bean id="paper" class="cn.edu.tjut.po.Paper" scope="prototype"></bean>
+	
+	<bean id="result" class="cn.edu.tjut.po.Result" scope="prototype"></bean>
+
+
+	<!-- 配置连接池 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="username" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+		<property name="driverClassName" value="${jdbc.classDriver}"></property>
+		<property name="url" value="${jdbc.url}"></property>
+	</bean>
+
+	<!-- 配置会话工厂 -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource">
+		</property>
+		<property name="configLocation" value="classpath:hibernate.cfg.xml">
+		</property>
+		<property name="mappingLocations" value="classpath:cn/edu/tjut/po/*.hbm.xml">
+		</property>
+	</bean>
+
+
+	<!-- 配置spring声明式事务 -->
+	<!-- 配置事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- 配置事务通知 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="query*" read-only="true" isolation="SERIALIZABLE" />
+			<tx:method name="add*" />
+			<tx:method name="del*" />
+			<tx:method name="update*" />
+		</tx:attributes>
+	</tx:advice>
+
+	<!-- 配置切面 -->
+	<aop:config>
+		<aop:pointcut expression="execution(* cn.edu.tjut.service.*.*(..))"
+			id="pointcut1" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut1" />
+	</aop:config>
+
+	<!-- <tx:annotation-driven transaction-manager="transactionManager" /> -->
+</beans>

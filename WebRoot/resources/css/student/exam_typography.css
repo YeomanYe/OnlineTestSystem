@@ -1,0 +1,7 @@
+input[type="submit"]{width:50px;height:30px;margin-bottom:20px;cursor:pointer;}
+
+.testTitle{padding:5px 0;font-weight:bold;width:100%;text-align:left;}
+
+#wrap{border:1px solid black;}
+
+td:hover{background-color:#ccc;}

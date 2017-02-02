@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="cn.edu.tjut.po.Result" table="tb_result">
+		<id name="resultID" type="java.lang.Integer">
+			<column name="resultID"></column>
+			<generator class="increment"></generator>
+		</id>
+		<property name="paperName" type="java.lang.String">
+			<column name="paperName" length="60"></column>
+		</property>
+		<property name="score" type="java.lang.Integer">
+			<column name="score"></column>
+		</property>
+		<property name="time" type="java.util.Date">
+			<column name="time"></column>
+		</property>
+		<!-- 配置多对一关系 -->
+		<many-to-one name="student" class="cn.edu.tjut.po.Student"
+			column="studentID" ></many-to-one>
+	</class>
+</hibernate-mapping>

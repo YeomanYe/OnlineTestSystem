@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping >
+	<class name="cn.edu.tjut.po.Paper" table="tb_paper">
+	 <id name="paperId" type="java.lang.Integer">
+	 	<column name="paperId" ></column>
+	 	<generator class="identity"></generator>
+	 </id>
+	 <property name="paperName" type="java.lang.String">
+	 	<column name="paperName" length="60"/>
+	 </property>
+	 <property name="paperScore" type="java.lang.Integer">
+	 	<column name="paperScore"/>
+	 </property>
+	 <property name="paperAuthor" type="java.lang.String">
+	 	<column name="paperAuthor" length="60"/>
+	 </property>
+	 <property name="paperCreateDate" type="java.util.Date">
+	 	<column name="paperCreateDate"/>
+	 </property>
+	 <property name="paperUpdateDate" type="java.util.Date">
+	 	<column name="paperUpdateDate"/>
+	 </property>
+	 <property name="paperDescription" type="java.lang.String">
+	 	<column name="paperDescription"/>
+	 </property>
+	 <property name="paperSubjectNumber" type="java.lang.Integer">
+	 	<column name="paperSubjectNumber"></column>
+	 </property>
+	 <!-- 配置多对多关联关系 -->
+	 <set name="subjects" table="tb_subpap" cascade="save-update" lazy="false">
+	 	<key column="papId" ></key>
+	 	<many-to-many column="subId" class="cn.edu.tjut.po.Subject"></many-to-many>
+	 </set>
+	</class>
+</hibernate-mapping>

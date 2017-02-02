@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+<package name="subjectManager" namespace="/" extends="struts-default">
+	<action name="querySubjectAction" class="querySubjectAction">
+		<result>/jsp/teacher/subject/subjectAlter.jsp</result>
+	</action>
+	
+	<action name="loginAction" class="loginAction">
+		<result name="login">login.jsp</result>
+		<result name="teacher" type="redirect">/jsp/teacher/index.html</result>
+		<result name="student">/jsp/student/studentLogin.jsp</result>
+	</action>
+	
+	<action name="*_saveSubjectAction" method="{1}Subject" class="saveSubjectAction">
+		<result>/jsp/teacher/subject/subjectAdd.jsp</result>
+	</action>
+	
+	<action name="delSubjectAction_*" method="del{1}" class="delSubjectAction"/>
+		
+	<action name="*_savePaperAction_*" method="{1}{2}" class="savePaperAction">
+		<result>/jsp/teacher/paper/paperAlter.jsp</result>
+		<result name="check">/jsp/teacher/paper/paperCheck.jsp</result>
+		<result name="update" type="chain">query_savePaperAction_Subject</result>
+	</action>
+	
+	<action name="queryStudentAction_*" method="query{1}" class="queryStudentAction">
+		<result>/jsp/teacher/student/studentBaseInfo.jsp</result>
+		<result name="all">/jsp/teacher/student/studentAllInfo.jsp</result>
+	</action>
+	
+	<action name="queryPaperAction" class="queryPaperAction">
+		<result>/jsp/teacher/paper/paperQuery.jsp</result>
+	</action>
+	
+	<action name="delPaperAction_*" method="del{1}Paper" class="delPaperAction">
+		<result type="chain">queryPaperAction</result>
+	</action>
+	
+	<action name="*_resultAction" method="{1}Result" class="resultAction">
+		<result>/jsp/teacher/result/resultInfo.jsp</result>
+	</action>
+	
+	<action name="examAction" class="examAction">
+		<result>/jsp/student/result.jsp</result>
+	</action>
+	
+	<action name="captchaAction" class="captchaAction"/>
+	
+	<action name="registerAction_*" method="{1}Form" class="registerAction"/>
+	
+	<action name="*_studentOperateAction_*" method="{1}{2}" class="studentOperateAction">
+		<result name="queryBaseInfo">/jsp/student/baseInfo.jsp</result>
+		<result name="queryScore">/jsp/student/queryScore.jsp</result>
+		<result name="queryPaper">/jsp/student/onlineTest.jsp</result>
+		<result name="executeTest">/jsp/student/exam.jsp</result>
+	</action>
+</package>
+</struts>    

@@ -1,0 +1,132 @@
+*{margin:0;padding:0;list-style:none;}
+
+#header{
+	position:relative;
+	width:1250px;
+	margin:0 auto;
+	height:150px;
+	overflow:hidden;
+	background:url(../../images/stuLogHeadBack.png) no-repeat;
+}
+#headStuInfo{
+	position:absolute;
+	bottom:20px;
+	left:40px;
+}
+#headStuInfo span{
+	font-size:24px;
+	color:white;
+	margin:0 15px;
+}
+
+#content{
+	width:1250px;
+	margin:0 auto;
+	overflow:hidden;
+}
+
+#leftBar ul li{
+	text-indent:2em;
+	font-size:25px;
+	line-height:50px;
+}
+
+#leftBar ul li a{
+	padding:0 20px 10px;
+	color:black;
+	text-decoration:none;
+	border-bottom:1px solid #CCC;}
+	
+
+#leftBar ul li a:active{
+	color:black;
+	text-decoration:none;}
+#leftBar ul li a:visited{
+	color:black;
+	text-decoration:none;}
+#leftBar ul li a:linked{
+	color:black;
+	text-decoration:none;}
+#leftBar ul li a:hover{
+	color:red;
+	text-decoration:underline}
+	
+#leftBar ul li a.current{
+	border-bottom:1px solid red;
+	color:red;
+	}
+
+#leftBar{
+	float:left;}
+#rightBar{
+	float:right;
+	width:1000px;
+	margin-top:10px;
+	}
+	
+#rightBar #init{
+	display:display;}
+	
+#baseInfo form label span{
+	color:red;
+}
+#baseInfo form{
+	font-size:18px;
+	line-height:40px;}
+#baseInfo form input[type="button"],#baseInfo form input[type="reset"]{
+	width:50px;
+	height:30px;
+	cursor:pointer;
+	}
+#studentEmail{
+	margin-left:35px;
+	}
+#okBtn{
+	margin-left:100px;
+}
+#baseInfo{
+	width:300px;
+	margin:0 auto;
+}
+tr.odd{
+	background-color:#09F;
+	color:white;
+}
+tr.even{
+	background-color:#0CF;
+	color:white;
+}
+td,th{
+	padding:5px 20px;
+	border:none;
+}
+td a{
+color:blue;
+text-decoration:none;
+}
+td a:active{
+color:blue;
+text-decoration:none;
+}
+td a:linked{
+color:blue;
+text-decoration:none;
+}
+td a:visited{
+color:blue;
+text-decoration:none;
+}
+td a:hover{
+color:red;
+text-decoration:underline;
+}
+#queryScore table td,#queryScore table th{
+	text-align:center;
+	width:100px;
+	}
+#queryScore table{
+	margin-left:300px;
+	}
+tr:hover{
+	background-color:#999;
+}

@@ -1,0 +1,32 @@
+*{margin:0;padding:0;font-family:Verdana, Geneva, sans-serif;font-size:13px;line-height:28px;}
+
+#wrap{border:3px solid #99C;border-top:10px solid #99C;border-radius:6px;height:455px;position:relative;}
+
+#cap{text-indent:0;width:100px;text-align:center;line-height:30px;margin:0 20px;border-radius:8px 8px 0 0;border:1px solid black;border-bottom:none;border-top:2px solid #969;background-color:white;}
+#capwrap{border-bottom:2px solid #969;height:30px;background-color:#99C;}
+#content{border-top:none;}
+
+#top{margin:15px 0;text-indent:28px;}
+.right{float:right;}
+button{width:50px;}
+.abs{position:absolute;bottom:0;right:0;}
+#delBatch{margin:0 30px;width:70px;height:35px;}
+
+#queryB{width:60px;}
+input[type="text"]{height:20px;}
+input[type="submit"]{width:60px;height:30px;}
+
+table{list-style:none;width:100%;}
+td{text-align:center;margin:0;border:none;}
+tr.head{background-color:#360;color:white;}
+td.subUp{text-align:right;padding-right:5px;}
+td.subDel{text-align:left;padding-left:5px;}
+td a:active{text-decoration:none;color:blue;}
+td a:visited{text-decoration:none;color:blue;}
+td a:link{text-decoration:none;color:blue;}
+td a:hover{text-decoration:underline;color:red;}
+
+#go{border:1px solid #999;color:#369;padding:3px;color:#360;}
+#pageNumber{width:20px;height:20px;}
+
+input[type="submit"],input[type="button"],button,#go{cursor:pointer}

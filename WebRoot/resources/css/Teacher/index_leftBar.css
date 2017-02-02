@@ -1,0 +1,22 @@
+*{margin:0;padding:0;font-size:13px;list-style:none;font-family:Verdana, Geneva, sans-serif;}
+
+a:hover{text-decoration:none;color:black;}
+a:active{text-decoration:none;color:black;}
+a:visited{text-decoration:none;color:black;}
+a:link{text-decoration:none;color:black;}
+
+#wrap{width:100px;}
+
+dt{border:1px solid #CCC;line-height:30px;color:white;background-color:#09F;text-align:center;}
+dt:hover{cursor:pointer;}
+
+
+dl dd{display:none;}
+dl.current dd{display:block;}
+dl dd{line-height:20px;height:20px;text-align:center;border:1.2px dotted #993333;}
+dd a:hover{color:#F30;}
+
+a:link.cur{color:#F30;}
+a:active.cur{color:#F30;}
+a:visited.cur{color:#F30;}
+a:hover.cur{color:#F30;}

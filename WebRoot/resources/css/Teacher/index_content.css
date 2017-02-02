@@ -1,0 +1,9 @@
+*{margin:0;padding:0;font-family:Verdana, Geneva, sans-serif;text-indent:35px;font-size:13px;line-height:28px;}
+
+#wrap{border:3px solid #99C;border-top:10px solid #99C;border-radius:6px;height:455px;}
+
+#cap{text-indent:0;width:100px;text-align:center;line-height:30px;margin:0 20px;border-radius:8px 8px 0 0;border:1px solid black;border-bottom:none;border-top:2px solid #969;background-color:white;}
+#capwrap{border-bottom:2px solid #969;height:30px;background-color:#99C;}
+#content{border-top:none;}
+
+h1{font-size:15px;}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="cn.edu.tjut.po.Student" table="tb_student" catalog="db_onlinetestsystem">
+	  <id name="studentID" type="java.lang.String">
+	  	<column name="studentID" length="20"></column>
+	  	<generator class="assigned"></generator>
+	  </id>
+	  <property name="password" type="java.lang.String">
+	  	<column name="password" length="60"></column>
+	  </property>
+	  <property name="studentName" type="java.lang.String">
+	  	<column name="studentName" length="20"></column>
+	  </property>
+	  <property name="result" type="java.lang.Integer">
+	  	<column name="result"></column>
+	  </property>
+	  <property name="sclass" type="java.lang.String">
+	    <column name="sclass" length="20"></column>
+	  </property>
+	  <property name="studentAge" type="java.lang.Integer">
+	 	<column name="studentAge"></column>
+	  </property>
+	  <property name="studentSex" type="java.lang.Boolean">
+	  	<column name="studentSex"></column>
+	  </property>
+	  <property name="studentEmail" type="java.lang.String">
+	  	<column name="studentEmail" length="50"></column>
+	  </property>
+	  <property name="studentRegisterDate" type="java.util.Date">
+	  	<column name="studentRegisterDate"></column>
+	  </property>
+	  <!-- 配置一对多关系 -->
+	  <set name="results" table="tb_result">
+	 	 <key column="studentID"></key>
+	 	 <one-to-many class="cn.edu.tjut.po.Result"/>
+	  </set>
+	</class>
+</hibernate-mapping>
